@@ -4,17 +4,14 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	char buffer[8];
-    double *pd;
-    int *pi;
-   
-    pd = (double *)buffer;
-    *pd = 3.14;
-    printf("%f\n ", *(double*)buffer );
-   
-    pi = (int *)buffer;
-    *pi = 123;
-    *(pi+1) = 456;
-    printf("%d %d\n", *(int*)buffer, *((int*)buffer + 1) ); 
+	int i = 100;
+	int *p = &i;
+	int **q = &p;
+	
+	*p=200;
+	printf("i = %d, *p = %d, **q = %d\n", i,*p,**q);
+	
+	**q = 300;
+	printf("i = %d, *p = %d, **q = %d\n", i,*p,**q);	 
 	return 0;
 }
